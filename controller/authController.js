@@ -1,4 +1,4 @@
-const User = require("../models/User");
+const User = require("../model/User");
 const bcrypt = require("bcrypt");
 const generateToken = require("../utils/generateToken");
 
@@ -36,3 +36,5 @@ const userLogin = async (req, res) => {
     res.status(401).json({ message: "Invalid credentials" });
   }
 };
+
+module.exports = { register: userRegister, login: userLogin };
